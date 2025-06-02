@@ -1,0 +1,28 @@
+{
+  "name": "Empty Project Template",
+  "description": "A clean, empty project template with basic structure",
+  "schema_version": "1.0",
+  "project_type": "dotnet",
+  "architecture": {
+    "components": [
+      {
+        "name": "Core",
+        "description": "Main application code",
+        "path": "/"
+      }
+    ]
+  },
+  "conventions": {
+    "naming": {
+      "classes": "PascalCase",
+      "methods": "PascalCase",
+      "variables": "camelCase",
+      "constants": "ALL_CAPS",
+      "properties": "PascalCase",
+      "interfaces": "IPascalCase"
+    },
+    "patterns": {
+      "preferred": ["MVVM", "Repository", "Dependency Injection"]
+    }
+  }
+}

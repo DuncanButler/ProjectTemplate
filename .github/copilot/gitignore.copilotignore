@@ -1,0 +1,12 @@
+# Ignore build outputs
+bin/
+obj/
+
+# ignore structurizr build files
+.structurizr/
+
+# Ignore sensitive data
+appsettings.*.json
+
+# But include development settings
+!appsettings.Development.json
