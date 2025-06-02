@@ -1,0 +1,3 @@
+    configuration {
+        scope softwaresystem
+    }
