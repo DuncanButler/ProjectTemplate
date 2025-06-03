@@ -1,38 +1,139 @@
-# Project Template
+# .NET Architecture Template
 
-## Introduction
-This repository presents a basic project template for a dot net project
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![.NET](https://img.shields.io/badge/.NET-8.0%20%7C%209.0-blue)
+![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Enabled-brightgreen)
 
-## Dot Net Solution
+> A professional .NET project template with pre-configured architecture documentation, GitHub Copilot integration, and best practices for modern application development.
 
-The repository contains a dot net solution, that has no current projects added, projects are stored in the source directory, along with tests in the tests directory.
+## What Is This Template?
 
-When using the aspire project templates it is recommended that the host and service default projects are added to the infrastructure folder
+This template provides a structured foundation for building well-architected .NET applications with built-in support for:
 
-## Architecture
+- **Architecture Documentation** using [Structurizr](https://structurizr.com/)
+- **GitHub Copilot** configuration with smart prompts and AI assistance
+- **Organized Project Structure** with clear separation of concerns
+- **DevOps Pipeline** ready with GitHub Actions workflows
+- **Best Practices** for modern .NET development
 
-The default template has a basic architecture for a website with a user, service layer and database built in the architecture folder using [Structurizr](https://structurizr.com/)
+## Key Features
 
+- ✅ **Pre-configured Architecture** - Architecture-as-Code using Structurizr
+- ✅ **Enforced Project Organization** - Standardized directory structure for Source, Tests, and Infrastructure
+- ✅ **AI-Assisted Development** - GitHub Copilot integration with specialized prompts
+- ✅ **Modern Development Environment** - EditorConfig, DevContainer, and recommended extensions
+- ✅ **CI/CD Ready** - GitHub Actions workflows for build and test
+- ✅ **Consistency Enforcement** - Centralized build properties and package versioning
 
-## Instalation
-run the following command from the root of the coloned repository, to uninstall any previous versions of the template and install the new verson:
+## Getting Started
 
-```
+### Installation
+
+Install the template in your .NET environment:
+
+```powershell
+# Uninstall any previous versions
 dotnet new uninstall {full path to repository}
 
+# Install the template
 dotnet new install {full path to repository}
 ```
 
-## Usage
-To create a new project using this template, run the following command:
+### Create a New Project
 
-```   
-dotnet new arch-template -n {project name}
+Generate a new project from the template:
+
+```powershell
+dotnet new arch-template -n YourProjectName
 ```
+
+### Project Structure
+
+Your new project will be created with this organized structure:
+
+```
+YourProjectName/
+├── Source/                # Application source code
+│   └── README.md          # Guidance for source code organization
+├── Tests/                 # All test projects
+│   └── README.md          # Testing guidelines and conventions
+├── Infrastructure/        # Infrastructure components (Aspire, Docker, etc.)
+│   └── README.md          # Infrastructure documentation
+├── Architecture/          # Structurizr architecture models
+│   ├── configuration.dsl  # Structurizr configuration
+│   ├── models.dsl         # System models
+│   └── views.dsl          # Architecture views
+├── .github/               # GitHub workflows and Copilot configuration
+│   ├── copilot/           # Copilot prompt templates
+│   └── workflows/         # CI/CD workflows
+└── [Configuration files]  # Various configuration files for tools and standards
+```
+
+## Developer Workflow
+
+This template is designed to support a modern, productive developer workflow. Here's how to make the most of it:
+
+### 1. Initial Setup
+
+After creating your project from the template:
+
+```powershell
+# Navigate to your new project
+cd YourProjectName
+
+# Open in VS Code with recommended extensions
+code .
+
+# Explore the architecture documentation
+code ./Architecture/
+```
+
+### 2. Adding New Features
+
+When adding new features to your application:
+
+1. **Update Architecture First**
+   - Modify the Structurizr models in the Architecture folder
+   - Run `./run_structurizr.ps1` to visualize the changes
+   - Review and refine the architecture
+
+2. **Follow the Project Structure Convention**
+   - Add application code to the `Source/` directory
+   - Add test projects to the `Tests/` directory
+   - Add infrastructure components to the `Infrastructure/` directory
+
+3. **Leverage GitHub Copilot**
+   - Use the prompt templates in `.github/copilot/prompts/`
+   - Ask Copilot for guidance on implementing architectural patterns
+   - Use Copilot to generate unit tests
+
+4. **Implement Tests**
+   - Practice Test-Driven Development (TDD) where appropriate
+   - Ensure all new features have corresponding tests
+   - Aim for high code coverage
+
+### 3. Continuous Integration
+
+The template includes GitHub Actions workflows that automatically:
+
+- Build your solution
+- Run all tests
+- Report any failures
+
+Ensure all CI checks pass before merging feature branches.
+
+### 4. Development Best Practices
+
+- **Keep Architecture Updated**: Ensure your code implementation matches the architecture documentation
+- **Follow Clean Code Principles**: Use meaningful names, small functions, and proper separation of concerns
+- **Use Dependency Injection**: Follow the dependency injection pattern for loosely coupled components
+- **Documentation**: Document public APIs and complex logic
 
 ## GitHub Copilot Integration
 
-This project is configured to use GitHub Copilot in Chat mode by default:
+This template comes with pre-configured GitHub Copilot support to accelerate development:
+
+### Getting Started with Copilot
 
 1. When opening the project in VS Code, Copilot Chat should automatically activate.
 2. If not, you can open it manually:
@@ -40,28 +141,33 @@ This project is configured to use GitHub Copilot in Chat mode by default:
    - Or click the Copilot Chat icon in the sidebar
 
 ### Using Copilot Chat
-- Ask questions about the codebase with `@workspace`
-- Generate new code with detailed prompts
-- Debug issues with `@vscode`
-- Get terminal help with `@terminal`
 
-### Prompt Templates
-This project includes ready-to-use prompt templates to help you get the most out of GitHub Copilot. You'll find them in the `.github/copilot/prompts/` directory.
+Copilot understands your project structure and can help with various tasks:
+
+- **Architecture Questions**: `@workspace How does the architecture of this application work?`
+- **Code Generation**: `@workspace Create a new service for user authentication`
+- **Project Structure**: `@workspace Where should I add a new API controller?`
+- **Debug Assistance**: `@vscode Why is this test failing?`
+- **Terminal Commands**: `@terminal How do I run the architecture visualization?`
+
+### Specialized Prompt Templates
+
+This template includes ready-to-use prompt templates in `.github/copilot/prompts/` designed specifically for:
+
+- **Code Generation** - Creating components that follow your architecture
+- **Testing** - Generating comprehensive test cases
+- **Documentation** - Creating consistent documentation
+- **Refactoring** - Improving code quality while preserving behavior
+- **API Design** - Creating RESTful API endpoints following best practices
+- **Project Setup** - Configuring new features and services
 
 #### How to Use the Prompts
-1. Open GitHub Copilot Chat in VS Code
-2. Copy a prompt from one of the prompt template files
-3. Paste it into the chat
-4. Replace the placeholders (text in [brackets]) with your specific needs
-5. Send the prompt
 
-#### Available Prompt Categories
-- **Code Generation** - Create new code components quickly
-- **Testing** - Generate comprehensive test cases
-- **Documentation** - Create documentation for your code
-- **Refactoring** - Improve existing code
-- **API Design** - Design RESTful API endpoints
-- **Project Setup** - Configure services and middleware
+1. Open GitHub Copilot Chat in VS Code
+2. Browse the prompt templates in `.github/copilot/prompts/`
+3. Copy a prompt that matches your current task
+4. Paste it into Copilot Chat and replace placeholders
+5. Use the generated code or guidance
 
 ## Additional Features
 
@@ -89,19 +195,59 @@ The template includes several additional features to enhance developer productiv
 - Consistent environment setup
 - Automated testing configurations
 
+## Architecture Documentation
+
+One of the key features of this template is the built-in architecture documentation using Structurizr.
+
+### What is Structurizr?
+
+[Structurizr](https://structurizr.com/) is a tool for creating software architecture diagrams and documentation based on the C4 model. It allows you to:
+
+- Define your architecture as code (Architecture-as-Code)
+- Generate consistent diagrams at different levels of abstraction
+- Keep documentation and implementation in sync
+
+### Exploring the Architecture
+
+The template includes a pre-configured architecture model in the `Architecture/` directory:
+
+- `configuration.dsl` - Structurizr workspace configuration
+- `models.dsl` - Definition of systems, containers, and components
+- `views.dsl` - Various views of the architecture
+
+To visualize the architecture:
+
+```powershell
+# Run the Structurizr script
+./run_structurizr.ps1
+
+# Open the generated diagrams in your browser
+```
+
+### Evolving the Architecture
+
+As your application evolves, update the architecture models to reflect the changes:
+
+1. Modify the DSL files in the `Architecture/` directory
+2. Run the visualization script
+3. Review and refine the architecture
+4. Ensure your implementation matches the architecture
+
 ## Build Configuration Files
 
-This template includes two important MSBuild configuration files that are considered best practices for modern .NET development:
+This template includes two important MSBuild configuration files:
 
 ### Directory.Build.props
 
-`Directory.Build.props` centralizes common project settings and build properties. While not strictly required, it provides:
+`Directory.Build.props` centralizes common project settings and build properties. It provides:
 
 - Consistent settings across all projects in your solution
 - Single place to manage common properties
 - Enforcement of team coding standards
 
-You can modify or remove this file if it doesn't fit your workflow.
+To customize:
+- Edit the file to adjust settings for your team's preferences
+- Add additional properties as needed for your project
 
 ### Directory.Packages.props
 
@@ -111,11 +257,23 @@ You can modify or remove this file if it doesn't fit your workflow.
 - Simplify dependency updates
 - Ensure consistent dependencies
 
-CPM is optional but highly recommended for multi-project solutions.
-
-To use:
+To use CPM effectively:
 1. Define package versions in `Directory.Packages.props`
 2. In .csproj files, reference packages without version numbers: `<PackageReference Include="PackageName" />`
 3. All projects will use the versions defined centrally
 
 Learn more about [Central Package Management](https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management).
+
+## Contribution and Support
+
+### Contributing
+
+We welcome contributions to improve this template! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines.
+
+### License
+
+This template is available under the MIT License. See the LICENSE file for more information.
+
+### Support
+
+If you encounter any issues or have questions about this template, please [open an issue](https://github.com/yourusername/yourrepositoryname/issues) on GitHub.
