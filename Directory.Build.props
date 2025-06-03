@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <!-- 
+    This file provides common properties and settings for all projects in the solution.
+    You can modify these settings according to your team's preferences.
+    -->
+  <PropertyGroup>
+    <!-- Use the target framework specified in your template -->
+    <TargetFramework>$(TargetFramework)</TargetFramework>
+    
+    <!-- Common recommended settings -->
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    
+    <!-- Settings that you may want to adjust per team preference -->
+    <Nullable>enable</Nullable>
+    <!-- <TreatWarningsAsErrors>true</TreatWarningsAsErrors> --> <!-- Uncomment for strict warning treatment -->
+    <AnalysisLevel>latest</AnalysisLevel>
+    
+    <!-- Documentation settings -->
+    <GenerateDocumentationFile>false</GenerateDocumentationFile> <!-- Set to true to generate XML documentation -->
+  </PropertyGroup>
+</Project>

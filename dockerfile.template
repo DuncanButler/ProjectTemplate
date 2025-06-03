@@ -1,0 +1,22 @@
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY ["Directory.Build.props", "."]
+COPY ["Directory.Packages.props", "."]
+COPY ["Source/YourApp.API/YourApp.API.csproj", "Source/YourApp.API/"]
+RUN dotnet restore "Source/YourApp.API/YourApp.API.csproj"
+COPY . .
+WORKDIR "/src/Source/YourApp.API"
+RUN dotnet build "YourApp.API.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "YourApp.API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "YourApp.API.dll"]

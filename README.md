@@ -23,6 +23,13 @@ dotnet new uninstall {full path to repository}
 dotnet new install {full path to repository}
 ```
 
+## Usage
+To create a new project using this template, run the following command:
+
+```   
+dotnet new arch-template -n {project name}
+```
+
 ## GitHub Copilot Integration
 
 This project is configured to use GitHub Copilot in Chat mode by default:
@@ -56,8 +63,59 @@ This project includes ready-to-use prompt templates to help you get the most out
 - **API Design** - Design RESTful API endpoints
 - **Project Setup** - Configure services and middleware
 
-### Project Structure
-The template enforces a specific project structure that Copilot is configured to understand:
-- `Source/` - Contains all application code and business logic
-- `Tests/` - Contains all test projects with the `.Tests` suffix
-- `Infrastructure/` - Contains Aspire host projects and service defaults
+## Additional Features
+
+The template includes several additional features to enhance developer productivity:
+
+### Development Environment
+- **EditorConfig**: Ensures consistent code style across different editors
+- **DevContainer**: Ready-to-use development container configuration for VS Code
+- **VS Code Extensions**: Recommended extensions pre-configured
+
+### Build and Configuration
+- **Directory.Build.props**: Common build properties for all projects
+- **Directory.Packages.props**: Centralized package version management
+- **Global.json**: SDK version control
+- **CI/CD Workflows**: GitHub Actions workflows for building and testing
+
+### Templates and Guidelines
+- **Docker Support**: Dockerfile template for containerization
+- **Contributing Guidelines**: Instructions for project contribution
+- **Project Structure**: Clear organization of source code, tests, and infrastructure
+
+### Best Practices
+- Code style enforcement
+- Centralized dependency management
+- Consistent environment setup
+- Automated testing configurations
+
+## Build Configuration Files
+
+This template includes two important MSBuild configuration files that are considered best practices for modern .NET development:
+
+### Directory.Build.props
+
+`Directory.Build.props` centralizes common project settings and build properties. While not strictly required, it provides:
+
+- Consistent settings across all projects in your solution
+- Single place to manage common properties
+- Enforcement of team coding standards
+
+You can modify or remove this file if it doesn't fit your workflow.
+
+### Directory.Packages.props
+
+`Directory.Packages.props` enables Central Package Management (CPM) to maintain consistent package versions across your solution. Benefits include:
+
+- Eliminate version conflicts between projects
+- Simplify dependency updates
+- Ensure consistent dependencies
+
+CPM is optional but highly recommended for multi-project solutions.
+
+To use:
+1. Define package versions in `Directory.Packages.props`
+2. In .csproj files, reference packages without version numbers: `<PackageReference Include="PackageName" />`
+3. All projects will use the versions defined centrally
+
+Learn more about [Central Package Management](https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management).

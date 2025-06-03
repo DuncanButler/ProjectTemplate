@@ -43,12 +43,20 @@
             "**/[Oo]bj/**"
           ]
         },
-        {
-          "include": [
+        {          "include": [
             ".github/copilot/**",
             ".github/copilot/prompts/**",
+            ".github/workflows/**",
             ".vscode/settings.json",
+            ".vscode/extensions.json",
             ".vscodeignore",
+            ".devcontainer/**",
+            ".editorconfig",
+            "Directory.Build.props",
+            "Directory.Packages.props",
+            "global.json",
+            "CONTRIBUTING.md",
+            "dockerfile.template",
             "*.code-workspace",
             "PROJECT_STRUCTURE.md",
             "structure.slnproj",

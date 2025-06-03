@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <!-- 
+    This file enables Central Package Management (CPM) for the solution.
+    It allows you to define package versions in one place and use them across all projects.
+    
+    How to use:
+    1. Define package versions here
+    2. In your .csproj files, just add <PackageReference Include="PackageName" /> without version numbers
+    3. All projects will use the versions defined here
+    
+    Learn more: https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management
+  -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <!-- Core Microsoft Extensions - Fundamental packages for most .NET applications -->
+    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    
+    <!-- Testing - Common testing packages -->
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageVersion Include="xunit" Version="2.6.1" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.5.3" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.0" />
+    
+    <!-- Add your additional packages here -->
+    
+    <!-- Example:
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
+    -->
+  </ItemGroup>
+  </ItemGroup>
+</Project>
