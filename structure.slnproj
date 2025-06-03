@@ -1,0 +1,28 @@
+<ProjectStructure>
+  <Directories>
+    <Directory path="Source" purpose="application_code">
+      <Description>Contains all application code and business logic</Description>
+      <ProjectPatterns>
+        <Pattern>*.csproj</Pattern>
+        <Exclude>*.Tests.csproj</Exclude>
+        <Exclude>*.AppHost.csproj</Exclude>
+        <Exclude>*.ServiceDefaults.csproj</Exclude>
+      </ProjectPatterns>
+    </Directory>
+    
+    <Directory path="Tests" purpose="tests">
+      <Description>Contains all test projects</Description>
+      <ProjectPatterns>
+        <Pattern>*.Tests.csproj</Pattern>
+      </ProjectPatterns>
+    </Directory>
+    
+    <Directory path="Infrastructure" purpose="infrastructure">
+      <Description>Contains Aspire hosts and service defaults</Description>
+      <ProjectPatterns>
+        <Pattern>*.AppHost.csproj</Pattern>
+        <Pattern>*.ServiceDefaults.csproj</Pattern>
+      </ProjectPatterns>
+    </Directory>
+  </Directories>
+</ProjectStructure>

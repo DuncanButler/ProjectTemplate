@@ -1,3 +1,11 @@
-# Test Folder
+# Tests Directory
 
-this folder contains all the tests for the projects in the source folder. 
+This directory contains all test projects including:
+- Unit tests
+- Integration tests
+- Functional tests
+- Performance tests
+
+All test projects should be named with the `.Tests` suffix, for example:
+- `ProjectName.Core.Tests`
+- `ProjectName.API.Tests`

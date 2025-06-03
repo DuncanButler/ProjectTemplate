@@ -33,16 +33,30 @@
   },
   "sources": [
     {
-        "exclude": [
+      "modifiers": [
+        {
+          "exclude": [
             "**/.structurizr/**",
             ".template.config/**",
-            "**/.vs/**"
-        ]
-    },
-    {
-      "include": [
-        ".github/copilot/**",
-        ".vscode/settings.json"
+            "**/.vs/**",
+            "**/[Bb]in/**",
+            "**/[Oo]bj/**"
+          ]
+        },
+        {
+          "include": [
+            ".github/copilot/**",
+            ".github/copilot/prompts/**",
+            ".vscode/settings.json",
+            ".vscodeignore",
+            "*.code-workspace",
+            "PROJECT_STRUCTURE.md",
+            "structure.slnproj",
+            "Source/source-readme.md", 
+            "Tests/test-readme.md",
+            "Infrastructure/infrastructure-readme.md"
+          ]
+        }
       ]
     }
   ]

@@ -1,0 +1,3 @@
+# Don't ignore settings and workspace files
+!.vscode/**
+!*.code-workspace

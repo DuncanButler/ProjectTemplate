@@ -15,22 +15,49 @@ The default template has a basic architecture for a website with a user, service
 
 
 ## Instalation
-run the following command from the root of the coloned repository
+run the following command from the root of the coloned repository, to uninstall any previous versions of the template and install the new verson:
+
 ```
+dotnet new uninstall {full path to repository}
 
 dotnet new install {full path to repository}
-
 ```
 
 ## GitHub Copilot Integration
 
-This project includes GitHub Copilot configuration for enhanced developer productivity. To make the most of it:
+This project is configured to use GitHub Copilot in Chat mode by default:
 
-1. Make sure GitHub Copilot extension is installed in your IDE
-2. Use Copilot for:
-   - Generating code based on comments
-   - Completing code as you type
-   - Suggesting solutions for common patterns
-   - Explaining unfamiliar code
+1. When opening the project in VS Code, Copilot Chat should automatically activate.
+2. If not, you can open it manually:
+   - Use the shortcut: `Ctrl+Alt+C` (Windows/Linux) or `Cmd+Option+C` (Mac)
+   - Or click the Copilot Chat icon in the sidebar
 
-Copilot has been configured to understand this project's architecture and coding conventions.
+### Using Copilot Chat
+- Ask questions about the codebase with `@workspace`
+- Generate new code with detailed prompts
+- Debug issues with `@vscode`
+- Get terminal help with `@terminal`
+
+### Prompt Templates
+This project includes ready-to-use prompt templates to help you get the most out of GitHub Copilot. You'll find them in the `.github/copilot/prompts/` directory.
+
+#### How to Use the Prompts
+1. Open GitHub Copilot Chat in VS Code
+2. Copy a prompt from one of the prompt template files
+3. Paste it into the chat
+4. Replace the placeholders (text in [brackets]) with your specific needs
+5. Send the prompt
+
+#### Available Prompt Categories
+- **Code Generation** - Create new code components quickly
+- **Testing** - Generate comprehensive test cases
+- **Documentation** - Create documentation for your code
+- **Refactoring** - Improve existing code
+- **API Design** - Design RESTful API endpoints
+- **Project Setup** - Configure services and middleware
+
+### Project Structure
+The template enforces a specific project structure that Copilot is configured to understand:
+- `Source/` - Contains all application code and business logic
+- `Tests/` - Contains all test projects with the `.Tests` suffix
+- `Infrastructure/` - Contains Aspire host projects and service defaults

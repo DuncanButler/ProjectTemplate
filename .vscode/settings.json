@@ -10,4 +10,14 @@
     "listCount": 5,
     "inlineSuggestCount": 3
   },
+  "github.copilot.editor.enableAutoCompletions": true,
+  
+  "github.copilot.chat.welcomeMessage": "enabled",
+  "github.copilot.chat.features.agentAssist": true,
+  "github.copilot.chat.features.commands": true,
+  "github.copilot.chat.features.codeExplain": true,
+  "github.copilot.chat.features.followUps": true,
+  
+  "workbench.startupEditor": "welcomePage",
+  "github.copilot.chat.welcomePanelOpenOnStartup": true
 }

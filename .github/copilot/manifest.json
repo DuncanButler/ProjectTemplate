@@ -6,11 +6,51 @@
   "architecture": {
     "components": [
       {
-        "name": "Core",
-        "description": "Main application code",
-        "path": "/"
+        "name": "Source",
+        "description": "Core application projects and libraries",
+        "path": "/Source",
+        "patterns": ["**/*.csproj", "**/*.cs"],
+        "purpose": "Contains business logic, models, and application services"
+      },
+      {
+        "name": "Tests",
+        "description": "Unit and integration test projects",
+        "path": "/Tests",
+        "patterns": ["**/*.Tests.csproj", "**/*Tests.cs", "**/*Test.cs"],
+        "purpose": "Contains all test projects - unit, integration, and functional tests"
+      },
+      {
+        "name": "Infrastructure",
+        "description": "Aspire hosts, service defaults, and infrastructure components",
+        "path": "/Infrastructure",
+        "patterns": ["**/*.AppHost.csproj", "**/*.ServiceDefaults.csproj"],
+        "purpose": "Contains Aspire host projects, service defaults, and other infrastructure configuration"
       }
-    ]
+    ],
+    "conventions": {
+      "project_organization": [
+        {
+          "pattern": "*.Tests.csproj",
+          "location": "/Tests",
+          "description": "All test projects belong in the tests directory"
+        },
+        {
+          "pattern": "*.AppHost.csproj",
+          "location": "/Infrastructure",
+          "description": "All Aspire host projects belong in the infrastructure directory"
+        },
+        {
+          "pattern": "*.ServiceDefaults.csproj",
+          "location": "/Infrastructure",
+          "description": "All service defaults projects belong in the infrastructure directory"
+        },
+        {
+          "pattern": "*.csproj",
+          "location": "/Source",
+          "description": "All other projects belong in the source directory"
+        }
+      ]
+    }
   },
   "conventions": {
     "naming": {
@@ -19,10 +59,8 @@
       "variables": "camelCase",
       "constants": "ALL_CAPS",
       "properties": "PascalCase",
-      "interfaces": "IPascalCase"
-    },
-    "patterns": {
-      "preferred": ["MVVM", "Repository", "Dependency Injection"]
+      "interfaces": "IPascalCase",
+      "test_classes": "{ClassName}Tests"
     }
   }
 }
