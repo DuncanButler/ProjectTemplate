@@ -53,19 +53,39 @@ Your new project will be created with this organized structure:
 
 ```
 YourProjectName/
-├── Source/                # Application source code
-│   └── README.md          # Guidance for source code organization
-├── Tests/                 # All test projects
-│   └── README.md          # Testing guidelines and conventions
-├── Infrastructure/        # Infrastructure components (Aspire, Docker, etc.)
-│   └── README.md          # Infrastructure documentation
+├── Source/                # Application code projects
+│   ├── YourProject.Core/  # Core business logic
+│   ├── YourProject.API/   # API projects
+│   └── ...                # Other application code
+│
+├── Tests/                 # Test projects
+│   ├── YourProject.UnitTests/
+│   ├── YourProject.IntegrationTests/
+│   └── ...                # Other test projects
+│
+├── Infrastructure/        # Infrastructure components
+│   ├── YourProject.AppHost/        # Aspire host project
+│   ├── YourProject.ServiceDefaults/# Service defaults
+│   └── ...                # Other infrastructure components
+│
 ├── Architecture/          # Structurizr architecture models
 │   ├── configuration.dsl  # Structurizr configuration
 │   ├── models.dsl         # System models
 │   └── views.dsl          # Architecture views
-├── .github/               # GitHub workflows and Copilot configuration
-│   ├── copilot/           # Copilot prompt templates
+│
+├── Documents/             # Project documentation
+│
+├── .github/               # GitHub configuration
+│   ├── copilot/           # Copilot guidance and prompts
+│   │   └── prompts/       # Specialized prompt templates
 │   └── workflows/         # CI/CD workflows
+│
+├── .devcontainer/         # Development container configuration
+├── .vscode/               # VS Code settings and recommendations
+│
+├── ProjectTemplate.sln    # Solution file
+├── run_structurizr.ps1    # Script to visualize architecture
+├── PROJECT_STRUCTURE.md   # Project structure guidelines
 └── [Configuration files]  # Various configuration files for tools and standards
 ```
 
